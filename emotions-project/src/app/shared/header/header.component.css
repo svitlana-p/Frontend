@@ -1,0 +1,16 @@
+.logo {
+    color: rgb(64, 64, 115);
+    margin: 25px 12vw;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.placeholder {
+    background-color: rgb(113, 221, 180);
+    height: 60px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
