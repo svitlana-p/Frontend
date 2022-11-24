@@ -1,43 +1,43 @@
 <div class="container">
-  <div class="img-container first-cont">
+  <div class="container__img container__img--big ">
   </div>
-  <div class="text-container">
-    <h1 class="text-header">Get to know yourself.</h1>
-    <p class="text">With this personality test, you will find out what personality type you are.</p>
-    <app-button title="Start the test" classes="btn secondary" routerLink="/test"></app-button>
+  <div class="container__text">
+    <h1 class="container__text__header">Get to know yourself.</h1>
+    <p class="container__text__paragraf">With this personality test, you will find out what personality type you are.</p>
+    <app-button title="Start the test" classes="btn btn__secondary" routerLink="/test"></app-button>
   </div>
 </div>
-<div class="card-container">
+<div class="container__card">
   <app-card dataImg="https://i.ibb.co/4MN7mw8/2022-11-24-3.jpg" dataHeader="Discover your personality within minutes!"
     dataText="It provides you with detailed, unique information that can help you plan your life and work more successfully."
-    color="colored" >
+    color="container__text--colored" >
   </app-card>
 
   <app-card dataImg="https://i.ibb.co/gRG1pZb/block1-2.jpg" dataHeader="Get valuable insights for your life."
     dataText="90% of users consider they were able to take concrete actions to improve areas of their personal and professional life."
-    color="colored">
+    color="container__text--colored">
   </app-card>
 </div>
-<div class=" container desc">
-  <div class="img-container second-cont"></div>
-  <div class="decs-container">
-    <p class="desc-text text-white">People love to take this personality test!
+<div class="container container__desc">
+  <div class="container__img container__img--small"></div>
+  <div>
+    <p class="container__desc__text container__desc__text--white">People love to take this personality test!
       Get to know which personality type suits you best</p>
-    <div class="desc-items">
+    <div class="container__desc__items">
       <div>
-        <p class="desc-text text-white">100</p>
-        <p class="text-white">Questions</p>
+        <p class="container__desc__text container__desc__text--white">100</p>
+        <p class="container__desc__text--white">Questions</p>
       </div>
       <div>
-        <p class="desc-text text-white">300</p>
-        <p class="text-white">Data points analyzed</p>
+        <p class="container__desc__text container__desc__text--white">300</p>
+        <p class="container__desc__text--white">Data points analyzed</p>
       </div>
     </div>
   </div>
 </div>
 <div class="works-card-container">
-  <h2 class="text-container text-item">How does it work?</h2>
-  <div class="card-container">
+  <h2 class="container__text container__text__item">How does it work?</h2>
+  <div class="container__card">
     <app-card dataHeader="Get ready"
       dataText="Make sure you're in a comfortable environment where you can focus on the test"
       dataImg="https://i.ibb.co/FwJ2YR5/1.png" ></app-card>
@@ -50,5 +50,5 @@
 </div>
 
 <div class="btn">
-  <app-button title="Start the test" classes="btn primary" routerLink="/test"></app-button>
+  <app-button title="Start the test" classes="btn btn__primary" routerLink="/test"></app-button>
 </div>

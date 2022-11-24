@@ -1,20 +1,20 @@
-<div class="container big row " *ngIf="color">
-    <div class="img-container">
-        <img class="img" src="{{dataImg}}" alt="" >
+<div class="container container--big " *ngIf="color">
+    <div class="container__img">
+        <img class="container__img__image" src="{{dataImg}}" alt="" >
     </div>
-    <div class="text {{color}}">
-        <div class="text-header ">
+    <div class="container__text {{color}}">
+        <div class="container__text__header ">
             {{dataHeader}}
         </div>
         {{dataText}}
     </div>
 </div>
-<div class="container small column " *ngIf="!color">
-    <div class="img-container">
-        <img class="img-small" src="{{dataImg}}" alt="" >
+<div class="container container--small" *ngIf="!color">
+    <div class="container__img">
+        <img class="container__img__image--small" src="{{dataImg}}" alt="" >
     </div>
-    <div class="text {{color}}">
-        <div class="text-header ">
+    <div class="container__text {{color}}">
+        <div class="container__text__header ">
             {{dataHeader}}
         </div>
         {{dataText}}

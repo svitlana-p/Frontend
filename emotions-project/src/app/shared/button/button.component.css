@@ -6,23 +6,23 @@
     width: 150px;
 }
 
-.primary {
+.btn__primary {
     background-color: rgb(85, 100, 245);
     border: none;
     color: rgb(64, 64, 115);
 }
 
-.secondary {
+.btn__secondary {
     background-color: white;
     border: 1px solid rgb(113, 221, 180);
     color: rgb(64, 64, 115);
 }
 
-.primary:hover{
+.btn__primary:hover{
     background-color:rgb(64, 64, 115);
     color: white;
 }
 
-.secondary:hover{
+.btn__secondary:hover{
     background-color: rgb(113, 221, 180);;
 }

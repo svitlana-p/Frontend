@@ -4,43 +4,43 @@
     text-align: center;
 }
 
-.img-container {
+.container__img {
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.first-cont {
+.container__img--big {
     height: 70vh;
     background-image: url('https://i.ibb.co/nMnf4Cy/block11.jpg');
 }
 
-.second-cont {
+.container__img--small {
     height: 40vh;
     background-image: url('https://i.ibb.co/TmM17Z9/block1-1.jpg');
 }
 
-.text-container {
+.container__text {
     padding: 0 3vw;
     color: rgb(64, 64, 115);
     margin-bottom: 0;
 }
 
-.text-header {
+.container__text__header{
     font-size: 32px;
     font-weight: bold;
 }
 
-.text {
+.container__text__paragraf {
     font-size: 16px;
 }
 
-.text-white {
+.container__desc__text--white {
     color: white;
     margin: 10px;
 }
 
-.card-container {
+.container__card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,18 +48,17 @@
     margin-bottom: 5vw;
 }
 
-.desc {
+.container__desc {
     margin: 0 4.5vw 5vw 4.5vw;
     background-color: rgb(113, 221, 180);
 }
-
-.desc-text {
+.container__desc__text {
     padding-top: 30px;
     margin: 0 40px;
     font-size: 36px;
 }
 
-.desc-items {
+.container__desc__items {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +66,7 @@
     font-weight: bold;
 }
 
-.text-item {
+.container__text__item {
     text-align: center;
     font-size: 32px;
 }
@@ -78,36 +77,36 @@
     margin: 5vw;
 }
 
-@media (min-width:600px) {
+@media (min-width:720px) {
     .container {
         flex-direction: row;
         text-align: start;
     }
 
-    .img-container {
+    .container__img {
         width: 50vw;
     }
 
-    .text-header {
+    .container__text__header {
         font-size: 80px;
     }
 
-    .text {
+    .container__text__paragraf {
         font-size: 24px;
     }
 
-    .card-container {
+    .container__card {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .desc-items {
+    .container__desc__items {
         flex-direction: row;
         justify-content: space-around;
         text-align: center;
     }
 
-    .text-item {
+    .container__text__item {
         font-size: 56px;
     }
 }
