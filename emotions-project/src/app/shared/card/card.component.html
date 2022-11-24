@@ -1,0 +1,22 @@
+<div class="container big row " *ngIf="color">
+    <div class="img-container">
+        <img class="img" src="{{dataImg}}" alt="" >
+    </div>
+    <div class="text {{color}}">
+        <div class="text-header ">
+            {{dataHeader}}
+        </div>
+        {{dataText}}
+    </div>
+</div>
+<div class="container small column " *ngIf="!color">
+    <div class="img-container">
+        <img class="img-small" src="{{dataImg}}" alt="" >
+    </div>
+    <div class="text {{color}}">
+        <div class="text-header ">
+            {{dataHeader}}
+        </div>
+        {{dataText}}
+    </div>
+</div>
