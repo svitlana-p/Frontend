@@ -7,9 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() dataImg!:string;
-  @Input() dataText!:string;
-  @Input() dataHeader!:string;
+  @Input() imgSrc = '';
+  @Input() content = '';
+  @Input() title = '';
   @Input() color?:string;
 
   constructor() { }

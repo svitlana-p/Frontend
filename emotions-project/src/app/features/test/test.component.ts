@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TestService } from 'src/app/core/test.service';
 import { ITest } from 'src/app/models/test';
 
@@ -8,14 +9,13 @@ import { ITest } from 'src/app/models/test';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  tests$!:ITest[]
 
-  constructor(public testService: TestService) { }
+  tests$!: Observable<ITest[]>
+
+  constructor(private testService: TestService) { }
 
   ngOnInit(): void {
-    this.testService.getAll().subscribe((tests)=>{
-      this.tests$ = tests
-    })
+    this.tests$ = this.testService.getAll()
   }
 
 }

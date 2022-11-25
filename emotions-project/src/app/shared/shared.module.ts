@@ -5,8 +5,9 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
+import { QuestionComponent } from './question/question.component';
 
-const components = [HeaderComponent, FooterComponent, ButtonComponent, CardComponent]
+const components = [HeaderComponent, FooterComponent, ButtonComponent, CardComponent, QuestionComponent]
 
 @NgModule({
   declarations: [...components],

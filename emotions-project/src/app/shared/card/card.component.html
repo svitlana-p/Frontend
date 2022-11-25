@@ -1,22 +1,13 @@
-<div class="container container--big " *ngIf="color">
-    <div class="container__img">
-        <img class="container__img__image" src="{{dataImg}}" alt="" >
+<div class="container" 
+[ngClass]="color ? 'container--big' : 'container--small'"
+>
+  <div class="container__img">
+    <img class="container__img__image" src="{{imgSrc}}" alt="logo">
+  </div>
+  <div class="container__text" [ngClass]="color">
+    <div class="container__text__header ">
+      {{title}}
     </div>
-    <div class="container__text {{color}}">
-        <div class="container__text__header ">
-            {{dataHeader}}
-        </div>
-        {{dataText}}
-    </div>
-</div>
-<div class="container container--small" *ngIf="!color">
-    <div class="container__img">
-        <img class="container__img__image--small" src="{{dataImg}}" alt="" >
-    </div>
-    <div class="container__text {{color}}">
-        <div class="container__text__header ">
-            {{dataHeader}}
-        </div>
-        {{dataText}}
-    </div>
+    {{content}}
+  </div>
 </div>

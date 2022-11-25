@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="container__title">
+        Select the answers based on how well each statement describes you.
+    </div>
+    <div class="container__items">
+        <div class="container__items__item">
+            <img class="container__items__img" src="https://i.ibb.co/LhjLCmP/01.jpg" alt="circle">
+            <p class="container__items__text">Strongly disagree</p>
+        </div>
+        <div class="container__items__item">
+            <img class="container__items__img" src="https://i.ibb.co/1XbTXP5/02.jpg" alt="circle">
+            <p class="container__items__text">Disagree</p>
+        </div>
+        <div class="container__items__item">
+            <img class="container__items__img" src="https://i.ibb.co/5GZN3Vn/03.jpg" alt="circle">
+            <p class="container__items__text">Neutral</p>
+        </div>
+        <div class="container__items__item">
+            <img class="container__items__img" src="https://i.ibb.co/JtCN33B/04.jpg" alt="circle">
+            <p class="container__items__text">Agree</p>
+        </div>
+        <div class="container__items__item">
+            <img class="container__items__img" src="https://i.ibb.co/LPqksM5/05.jpg" alt="circle">
+            <p class="container__items__text">Strongly agree</p>
+        </div>
+    </div>
+  <div class="container__tests" *ngFor="let test of tests$ | async">
+    <app-question [test]="test"></app-question>
+  </div>
+</div>
