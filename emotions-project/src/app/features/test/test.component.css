@@ -1,5 +1,5 @@
 .container {
-    height: 50vh;
+    /* height: 50vh; */
     text-align: center;
     color: rgb(64, 64, 115);
 }
@@ -13,12 +13,8 @@
     justify-content: center;
     margin: 20px;
 }
-.container__items__img {
-    width: 50px;
-    margin: 0 30px;
-    padding: 0;
-}
-.container__items__text{
-    margin-top: 0;
-    font-size: 12px;
+
+.container__button {
+    text-align: center;
+    margin: 30px;
 }

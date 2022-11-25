@@ -17,5 +17,7 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
     this.tests$ = this.testService.getAll()
   }
-
+  onResult(){
+    
+  }
 }

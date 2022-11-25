@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { ITest } from 'src/app/models/test';
 
 @Component({
@@ -9,10 +10,11 @@ import { ITest } from 'src/app/models/test';
 export class QuestionComponent implements OnInit {
 
   @Input() test!: ITest;
-
+  
   constructor() { }
 
+  
   ngOnInit(): void {
   }
-
+ 
 }

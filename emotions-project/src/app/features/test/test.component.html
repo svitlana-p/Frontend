@@ -1,30 +1,18 @@
 <div class="container">
-    <div class="container__title">
-        Select the answers based on how well each statement describes you.
-    </div>
-    <div class="container__items">
-        <div class="container__items__item">
-            <img class="container__items__img" src="https://i.ibb.co/LhjLCmP/01.jpg" alt="circle">
-            <p class="container__items__text">Strongly disagree</p>
-        </div>
-        <div class="container__items__item">
-            <img class="container__items__img" src="https://i.ibb.co/1XbTXP5/02.jpg" alt="circle">
-            <p class="container__items__text">Disagree</p>
-        </div>
-        <div class="container__items__item">
-            <img class="container__items__img" src="https://i.ibb.co/5GZN3Vn/03.jpg" alt="circle">
-            <p class="container__items__text">Neutral</p>
-        </div>
-        <div class="container__items__item">
-            <img class="container__items__img" src="https://i.ibb.co/JtCN33B/04.jpg" alt="circle">
-            <p class="container__items__text">Agree</p>
-        </div>
-        <div class="container__items__item">
-            <img class="container__items__img" src="https://i.ibb.co/LPqksM5/05.jpg" alt="circle">
-            <p class="container__items__text">Strongly agree</p>
-        </div>
-    </div>
+  <div class="container__title">
+    Select the answers based on how well each statement describes you.
+  </div>
+  <div class="container__items">
+    <app-circle-item imgSrc="https://i.ibb.co/LhjLCmP/01.jpg" content="Strongly disagree"></app-circle-item>
+    <app-circle-item imgSrc="https://i.ibb.co/1XbTXP5/02.jpg" content="Disagree"></app-circle-item>
+    <app-circle-item imgSrc="https://i.ibb.co/5GZN3Vn/03.jpg" content="Neutral"></app-circle-item>
+    <app-circle-item imgSrc="https://i.ibb.co/JtCN33B/04.jpg" content="Agree"></app-circle-item>
+    <app-circle-item imgSrc="https://i.ibb.co/LPqksM5/05.jpg" content="Strongly agree"></app-circle-item>
+  </div>
   <div class="container__tests" *ngFor="let test of tests$ | async">
     <app-question [test]="test"></app-question>
   </div>
+</div>
+<div class="container__button" routerLink="/result">
+  <app-button title="Result" classes="btn btn__secondary" (click)="onResult()"></app-button>
 </div>
