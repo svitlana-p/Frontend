@@ -26,16 +26,16 @@
     margin-bottom: 0;
 }
 
-.container__text__header{
+.container__header{
     font-size: 32px;
     font-weight: bold;
 }
 
-.container__text__paragraf {
+.container__paragraf{
     font-size: 16px;
 }
 
-.container__desc__text--white {
+.container__text-description--white {
     color: white;
     margin: 10px;
 }
@@ -52,7 +52,7 @@
     margin: 0 4.5vw 5vw 4.5vw;
     background-color: rgb(113, 221, 180);
 }
-.container__desc__text {
+.container__text-description {
     padding-top: 30px;
     margin: 0 40px;
     font-size: 36px;
@@ -66,7 +66,7 @@
     font-weight: bold;
 }
 
-.container__text__item {
+.container__item {
     text-align: center;
     font-size: 32px;
 }
@@ -87,11 +87,11 @@
         width: 50vw;
     }
 
-    .container__text__header {
+    .container__header {
         font-size: 80px;
     }
 
-    .container__text__paragraf {
+    .container__paragraf {
         font-size: 24px;
     }
 
@@ -106,7 +106,7 @@
         text-align: center;
     }
 
-    .container__text__item {
+    .container__item {
         font-size: 56px;
     }
 }

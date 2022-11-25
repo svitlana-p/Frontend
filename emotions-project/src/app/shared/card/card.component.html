@@ -2,10 +2,10 @@
 [ngClass]="color ? 'container--big' : 'container--small'"
 >
   <div class="container__img">
-    <img class="container__img__image" src="{{imgSrc}}" alt="logo">
+    <img class="container__image" src="{{imgSrc}}" alt="logo">
   </div>
   <div class="container__text" [ngClass]="color">
-    <div class="container__text__header ">
+    <div class="container__header">
       {{title}}
     </div>
     {{content}}

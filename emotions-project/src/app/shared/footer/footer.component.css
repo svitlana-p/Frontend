@@ -27,17 +27,17 @@ footer {
     cursor: pointer;
 }
 
-.container__logo__links {
+.container__links {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.container__footer__text {
+.container__text {
     font-size: 12px;
 }
 
-.container__logo__links__link {
+.container__link {
     margin: 10px;
 }
 
@@ -54,7 +54,7 @@ hr {
         justify-content: space-between;
     }
 
-    .container__logo__links {
+    .container__links {
         flex-direction: row;
     }
 

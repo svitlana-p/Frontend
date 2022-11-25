@@ -3,12 +3,11 @@
     font-size: 18px;
 }
 
-.container__form__input {
+.container__input {
     -webkit-appearance: none;
     appearance: none;
     border: 0.03em solid rgb(185, 184, 184);
     margin: 0 15px;
-    appearance: none;
     font: inherit;
     width: 30px;
     height: 30px;
@@ -16,32 +15,32 @@
     transform: translateY(-0.075em);
 }
 
-.container__form__input--rose {    
+.container__input--rose {    
     background-color: currentColor;
     color: rgb(253, 213, 213);
 }
 
-.container__form__input--lightrose {
+.container__input--lightrose {
     background-color: currentColor;
     color: rgb(254, 232, 232);
 }
 
-.container__form__input--white {
+.container__input--white {
     background-color: rgb(255, 255, 255);
     color: rgb(232, 229, 229);
 }
 
-.container__form__input-lightgreen {
+.container__input-lightgreen {
     background-color: currentColor;
     color: rgb(229, 250, 233);
 }
 
-.container__form__input-green {
+.container__input-green {
     background-color: currentColor;
     color: rgb(181, 241, 189);
 }
 
-.container__form__input::before {    
+.container__input::before {    
     width: 0.65em;
     height: 0.65em;
     border-radius: 50%;
@@ -49,7 +48,7 @@
     transition: 120ms transform ease-in-out;
 }
 
-.container__form__input:checked {
+.container__input:checked {
     outline: max(2px, 0.15em) solid currentColor;
     outline-offset: max(2px, 0.15em);
 }
