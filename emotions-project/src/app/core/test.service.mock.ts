@@ -1,9 +1,13 @@
 import { Observable, of } from "rxjs";
 import { testMock } from "../mocks/tests-mock";
-import { ITest } from "../models/test";
+import { IQuestion } from "../models/question";
 
 export class TestServiceMock {
-    getAll():Observable<ITest[]>{
+    getAll():Observable<IQuestion[]>{
         return of(testMock);
+    }
+
+    postTest(){
+        return 'ok'
     }
 }

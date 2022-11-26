@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ITest } from '../models/test';
+import { IQuestion } from '../models/question';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +10,13 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
-  getAll():Observable<ITest[]>{
-    return this.http.get<ITest[]>('http://localhost:8080/getAll')
+  getAll():Observable<IQuestion[]>{
+    return this.http.get<IQuestion[]>('http://localhost:8080/getAll')
   }
 
 
-  postTest(){
-
+  postTest(questions:any){
+    return this.http.post<any>('http://localhost:8080/questions/result', questions)
   };
 
   getResult(){

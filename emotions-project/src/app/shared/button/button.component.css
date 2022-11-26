@@ -4,6 +4,7 @@
     text-align: center;
     height: 50px;
     width: 150px;
+    cursor: pointer;
 }
 
 .btn__primary {

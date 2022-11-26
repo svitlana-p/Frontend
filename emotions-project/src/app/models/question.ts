@@ -1,4 +1,4 @@
-export interface ITest { 
+export interface IQuestion { 
     id: number,
     description: string,
     rate: number
