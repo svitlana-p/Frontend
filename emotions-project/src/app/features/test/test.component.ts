@@ -38,11 +38,11 @@ export class TestComponent implements OnInit, OnDestroy {
     this.questions.forEach(question => this.addQuestion(question));
   }
 
-  private addQuestion({ id, rate }: IQuestion) {
+  private addQuestion({ emotionId, value}: IQuestion) {
     this.questionsArr.push(
       new FormGroup({
-        id: new FormControl(id),
-        rate: new FormControl(rate, [
+        emotionId: new FormControl(emotionId),
+        value: new FormControl(value, [
           Validators.required
         ])
       })
@@ -54,7 +54,9 @@ export class TestComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    console.log(this.testForm.value.questions)
     if (this.questionsArr.controls[0].touched && this.questionsArr.controls[1].touched && this.questionsArr.controls[2].touched) {
+      this.testService.postTest(this.testForm.value.questions)
       this.router.navigate(['/result'])
     }
     this.isValid = false;

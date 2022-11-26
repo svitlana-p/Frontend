@@ -14,19 +14,19 @@
       <ng-container formArrayName="questions">
         <div *ngFor="let question of questions; let i = index">
           <label class="container__text">
-            {{question.description | titlecase}}
+            {{question.text | titlecase}}
           </label>
           <div class="container__group">
             <ng-container [formGroupName]="i">
               <div *ngFor="let rate of radioOptions(question); let j = index" class="container__inputs">
                 <input class="container__input" type="radio" [value]="j + 1"
-                  formControlName="rate" [required]="true" >
+                  formControlName="value" [required]="true" >
               </div>
             </ng-container>
           </div>
         </div>
       </ng-container>      
-      <div  *ngIf="!isValid">
+      <div  *ngIf="!isValid" class="container__error">
         Please select any option above!
       </div>
       <div class="container__button">
