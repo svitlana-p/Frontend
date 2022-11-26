@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { TestService } from 'src/app/core/test.service';
 import { IQuestion } from 'src/app/models/question';
 
@@ -11,8 +11,7 @@ import { IQuestion } from 'src/app/models/question';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit, OnDestroy {
-
-  isVisible = false;
+  isValid = true;
   sub!: Subscription;
   questions: IQuestion[] = [];
 
@@ -29,7 +28,7 @@ export class TestComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-   this.sub = this.testService.getAll().subscribe(questions => {
+    this.sub = this.testService.getAll().subscribe(questions => {
       this.questions = questions;
       this.setFormData();
     })
@@ -43,21 +42,27 @@ export class TestComponent implements OnInit, OnDestroy {
     this.questionsArr.push(
       new FormGroup({
         id: new FormControl(id),
-        rate: new FormControl(rate)
+        rate: new FormControl(rate, [
+          Validators.required
+        ])
       })
     )
   }
-  
+
   radioOptions(question: IQuestion) {
     return new Array(5);
   }
 
-  onSubmit() { 
-    console.log(this.testForm.value)
-    this.testService.postTest(this.testForm.value)
-    this.router.navigate(['/result'])
+  onSubmit() {
+    if (this.questionsArr.controls[0].touched && this.questionsArr.controls[1].touched && this.questionsArr.controls[2].touched) {
+      this.router.navigate(['/result'])
+    }
+    this.isValid = false;
+    return
   }
+
+
   ngOnDestroy(): void {
-    if(this.sub) this.sub.unsubscribe();
+    if (this.sub) this.sub.unsubscribe();
   }
 }

@@ -19,7 +19,7 @@
     margin: 15px;
     font-size: 18px;
 }
-.container__inputs{
+.container__group{
     display: flex;
     justify-content: center;
     margin: 20px;
@@ -27,37 +27,47 @@
 .container__input {
     -webkit-appearance: none;
     appearance: none;
-    border: 0.03em solid rgb(185, 184, 184);
-    margin: 0 15px;
+    border: 0.03em solid rgb(185, 184, 184);    
     font: inherit;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     transform: translateY(-0.075em);
     cursor: pointer;
+    position: absolute;
+    bottom: -1px;
+    right: -3px;
+}
+.container__inputs {
+    font: inherit;
+    margin: 0 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
 }
 
-.container__input--rose {
+.container__inputs:nth-child(1) {
     background-color: currentColor;
     color: rgb(253, 213, 213);
 }
 
-.container__input--lightrose {
+.container__inputs:nth-child(2){
     background-color: currentColor;
     color: rgb(254, 232, 232);
 }
 
-.container__input--white {
+.container__inputs:nth-child(3) {
     background-color: rgb(255, 255, 255);
     color: rgb(232, 229, 229);
 }
 
-.container__input-lightgreen {
+.container__inputs:nth-child(4) {
     background-color: currentColor;
     color: rgb(229, 250, 233);
 }
 
-.container__input-green {
+.container__inputs:nth-child(5) {
     background-color: currentColor;
     color: rgb(181, 241, 189);
 }
@@ -71,8 +81,8 @@
 }
 
 .container__input:checked {
-    outline: max(2px, 0.15em) solid currentColor;
-    outline-offset: max(2px, 0.15em);
+    outline: max(1px, 0.15em) solid rgb(203, 202, 202);
+    outline-offset: max(1px, 0.15em);
 }
 
 .container__button {
@@ -83,7 +93,4 @@
     margin-top: 10px;
     color: rgb(179, 2, 2);
     font-size: 12px;
-}
-.container__error--hidden {
-    display: none;
 }
