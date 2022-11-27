@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: rgb(64, 64, 115);
+}
+
+.container__items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container__items:last-child {
+    margin-bottom: 5vw;
+}
+
+.containet__text {
+    width: 20vw;
+}
+
+hr {
+    width: 30vw;
+    text-align: start;
+    margin: 20px 0;
+    border: none;
+    height: 2px;
+    background-color: rgb(113, 221, 180);
+}
+
+.container__title {
+    font-weight: bold;
+}

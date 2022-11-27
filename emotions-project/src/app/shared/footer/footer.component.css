@@ -39,6 +39,8 @@ footer {
 
 .container__link {
     margin: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 hr {

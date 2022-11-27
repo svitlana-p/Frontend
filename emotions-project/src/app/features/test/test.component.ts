@@ -57,7 +57,7 @@ export class TestComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.isSubmited = true;
     if (this.testForm.invalid) return
-    this.testService.postTest(this.testForm.value.questions)
+    this.testService.postTest(this.testForm.value.questions as IQuestion[])
     this.router.navigate(['/result'])    
   }
 

@@ -1,17 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./button.component.css']
 })
-export class ButtonComponent implements OnInit {
-  @Input() title!:string;
-  @Input() classes!:string;
-  
-  constructor() { }
+export class ButtonComponent {
 
-  ngOnInit(): void {
-  }
+  @Input() title!: string;
+  @Input() classes!: string;
 
 }

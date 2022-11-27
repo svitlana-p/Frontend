@@ -15,8 +15,8 @@ export class TestService {
   }
 
 
-  postTest(questions:any){
-    return this.http.post<any>('http://localhost:8080/questions/result', questions)
+  postTest(questions:(Partial<IQuestion>[])){
+    return this.http.post<any>('http://localhost:8080/v1/results', questions)
   };
 
   getResult(){
