@@ -20,17 +20,17 @@
             <ng-container [formGroupName]="i">
               <div *ngFor="let rate of radioOptions(question); let j = index" class="container__inputs">
                 <input class="container__input" type="radio" [value]="j + 1"
-                  formControlName="value" [required]="true" >
+                  formControlName="value" required>
               </div>
             </ng-container>
           </div>
         </div>
       </ng-container>      
-      <div  *ngIf="!isValid" class="container__error">
-        Please select any option above!
+      <div  *ngIf="isSubmited && testForm.invalid" class="container__error">
+        Please answer all the questions above!
       </div>
       <div class="container__button">
-        <app-button title="Result" type="submit" classes="btn btn__secondary" ></app-button>
+        <app-button title="Result" type="submit" classes="btn btn__secondary"></app-button>
       </div>
     </form>
   </section>

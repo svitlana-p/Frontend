@@ -11,8 +11,9 @@ import { IQuestion } from 'src/app/models/question';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit, OnDestroy {
-  isValid = true;
+
   sub!: Subscription;
+  isSubmited = false;
   questions: IQuestion[] = [];
 
   testForm = new FormGroup({
@@ -38,7 +39,7 @@ export class TestComponent implements OnInit, OnDestroy {
     this.questions.forEach(question => this.addQuestion(question));
   }
 
-  private addQuestion({ emotionId, value}: IQuestion) {
+  private addQuestion({ emotionId, value }: IQuestion) {
     this.questionsArr.push(
       new FormGroup({
         emotionId: new FormControl(emotionId),
@@ -54,13 +55,10 @@ export class TestComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log(this.testForm.value.questions)
-    if (this.questionsArr.controls[0].touched && this.questionsArr.controls[1].touched && this.questionsArr.controls[2].touched) {
-      this.testService.postTest(this.testForm.value.questions)
-      this.router.navigate(['/result'])
-    }
-    this.isValid = false;
-    return
+    this.isSubmited = true;
+    if (this.testForm.invalid) return
+    this.testService.postTest(this.testForm.value.questions)
+    this.router.navigate(['/result'])    
   }
 
 
