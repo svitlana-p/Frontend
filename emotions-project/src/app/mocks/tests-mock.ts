@@ -7,7 +7,7 @@ export const testMock = [
     {
         "id": 2,
         "text": "are you sad?",
-        "emotionId": 2
+        "emotionId": 1
     },
     {
         "id": 3,
