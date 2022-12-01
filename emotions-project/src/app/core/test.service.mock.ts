@@ -3,13 +3,14 @@ import { resultMock } from "../mocks/result-mock";
 import { testMock } from "../mocks/tests-mock";
 import { IEmotions } from "../models/emotions";
 import { IQuestion } from "../models/question";
+import { QuestionnareRes } from "../models/questionnare-res";
 
 export class TestServiceMock {
 
-    emotionJoy = false;
-    emotionFear = false;
-    emotionSadness = false;
-    emotionDisgust = false;
+    emotionJoy = true;
+    emotionFear = true;
+    emotionSadness = true;
+    emotionDisgust = true;
     emotionSurprise = true;
     emotionAnger = true;
     

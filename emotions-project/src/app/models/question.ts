@@ -1,6 +1,9 @@
 export interface IQuestion { 
     id: number;
     text: string;
-    emotionId: number;
+    emotion: {
+        id: number,
+        description: string
+    }
     value?: number;
 }

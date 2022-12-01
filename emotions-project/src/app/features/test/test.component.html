@@ -14,7 +14,7 @@
       <ng-container formArrayName="questions">
         <div *ngFor="let question of questions; let i = index">
           <label class="container__text">
-            {{question.text | titlecase}}
+            {{question.text}}
           </label>
           <div class="container__group">
             <ng-container [formGroupName]="i">

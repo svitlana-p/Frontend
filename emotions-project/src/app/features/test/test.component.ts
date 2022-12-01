@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { map, Subscription } from 'rxjs';
 import { TestService } from 'src/app/core/test.service';
 import { IQuestion } from 'src/app/models/question';
 
@@ -39,7 +39,8 @@ export class TestComponent implements OnInit, OnDestroy {
     this.questions.forEach(question => this.addQuestion(question));
   }
 
-  private addQuestion({ emotionId, value }: IQuestion) {
+  private addQuestion({ emotion, value }: IQuestion) {
+    const emotionId = emotion.id
     this.questionsArr.push(
       new FormGroup({
         emotionId: new FormControl(emotionId),
