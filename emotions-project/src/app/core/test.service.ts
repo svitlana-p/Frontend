@@ -31,13 +31,20 @@ export class TestService {
   postTest(questions: (Partial<IQuestion>[])): Observable<IEmotions> {
     return this.http.post<IEmotions>('/v1/results', questions)
       .pipe(
-        tap((res: IEmotions) => {                  
-            if (res[Emotion.joy] >= 4) this.emotionJoy = true;
+        tap((res: IEmotions) => {       
+           if (res[Emotion.joy] >= 4) this.emotionJoy = true;
             if (res[Emotion.fear] >= 4) this.emotionFear = true;
             if (res[Emotion.sadness] >= 4) this.emotionSadness = true;
             if (res[Emotion.disgust] >= 4) this.emotionDisgust = true;
             if (res[Emotion.surprise] >= 4) this.emotionSurprise = true;
-            if (res[Emotion.anger] >= 4) this.emotionAnger = true;
+            if (res[Emotion.anger] >= 4) this.emotionAnger = true;        
+          
+            // if (res[Emotion.joy] >= 4) this.emotionJoy = true;
+            // if (res[Emotion.fear] >= 4) this.emotionFear = true;
+            // if (res[Emotion.sadness] >= 4) this.emotionSadness = true;
+            // if (res[Emotion.disgust] >= 4) this.emotionDisgust = true;
+            // if (res[Emotion.surprise] >= 4) this.emotionSurprise = true;
+            // if (res[Emotion.anger] >= 4) this.emotionAnger = true;
           
         })
       )

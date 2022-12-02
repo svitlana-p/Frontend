@@ -4,13 +4,10 @@
     font-size: 32px;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .placeholder {
     background-color: rgb(113, 221, 180);
     height: 60px;
-}
-
-.logo:hover {
-    cursor: pointer;
 }

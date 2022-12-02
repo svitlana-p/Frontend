@@ -6,7 +6,7 @@ import { TestService } from 'src/app/core/test.service';
   selector: 'app-result',
   templateUrl: './result.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./result.component.css']
+  styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
 
@@ -30,8 +30,7 @@ export class ResultComponent implements OnInit {
       this.emotionDisgust = this.testService.emotionDisgust;
       this.emotionSurprise = this.testService.emotionSurprise;
       this.emotionAnger = this.testService.emotionAnger;
-      this.spinnerService.close()
-
+      this.spinnerService.close();
     }, 2000)
   }
 

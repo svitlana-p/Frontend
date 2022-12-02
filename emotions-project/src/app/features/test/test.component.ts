@@ -8,7 +8,7 @@ import { IQuestion } from 'src/app/models/question';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit, OnDestroy {
 
