@@ -1,6 +1,7 @@
-{
+  {
     "/v1": {
-      "target": "http://localhost:8080",
-      "secure": false
+      "target": "http://emotional-help.herokuapp.com",
+      "secure": false,
+      "changeOrigin": true
     }
   }

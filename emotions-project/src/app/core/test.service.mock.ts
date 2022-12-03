@@ -7,10 +7,10 @@ import { QuestionnareRes } from "../models/questionnare-res";
 
 export class TestServiceMock {
 
-    emotionJoy = true;
-    emotionFear = true;
-    emotionSadness = true;
-    emotionDisgust = true;
+    emotionJoy = false;
+    emotionFear = false;
+    emotionSadness = false;
+    emotionDisgust = false;
     emotionSurprise = true;
     emotionAnger = true;
     
