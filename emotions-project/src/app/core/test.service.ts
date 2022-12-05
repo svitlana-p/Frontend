@@ -35,7 +35,7 @@ export class TestService {
           'Accept': 'application/json',
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': '*',
-          'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+          'Access-Control-Allow-Headers': 'Origin, Content-Type'
         }
       )
     };
