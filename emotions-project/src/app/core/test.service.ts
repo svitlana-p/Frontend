@@ -24,7 +24,7 @@ export class TestService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<IQuestion[]> {
-    return this.http.get<QuestionnareRes>(`http://emotional-help.herokuapp.com/v1/questions`)
+    return this.http.get<QuestionnareRes>(`https://emotional-help.herokuapp.com/v1/questions`)
       .pipe(
         map(res => res.content)
       )
@@ -32,7 +32,7 @@ export class TestService {
 
   postTest(questions: (Partial<IQuestion>[])): Observable<IEmotions> {
     
-    return this.http.post<IEmotions>(`http://emotional-help.herokuapp.com/v1/results`, questions)
+    return this.http.post<IEmotions>(`https://emotional-help.herokuapp.com/v1/results`, questions)
       .pipe(
         tap((res: IEmotions) => {
           if (res[Emotion.joy] >= 4) this.emotionJoy = true;
