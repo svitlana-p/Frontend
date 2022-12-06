@@ -35,12 +35,12 @@ export class TestService {
     return this.http.post<IEmotions>(`https://emotional-help.herokuapp.com/v1/results`, questions)
       .pipe(
         tap((res: IEmotions) => {
-          if (res[Emotion.joy] >= 4) this.emotionJoy = true;
-          if (res[Emotion.fear] >= 4) this.emotionFear = true;
-          if (res[Emotion.sadness] >= 4) this.emotionSadness = true;
-          if (res[Emotion.disgust] >= 4) this.emotionDisgust = true;
-          if (res[Emotion.surprise] >= 4) this.emotionSurprise = true;
-          if (res[Emotion.anger] >= 4) this.emotionAnger = true;
+          (res[Emotion.joy] >= 4) ? this.emotionJoy = true : this.emotionJoy = false;
+          (res[Emotion.fear] >= 4) ? this.emotionFear = true : this.emotionFear = false;
+          (res[Emotion.sadness] >= 4) ? this.emotionSadness = true : this.emotionSadness = false;
+          (res[Emotion.disgust] >= 4) ? this.emotionDisgust = true : this.emotionDisgust = false;
+          (res[Emotion.surprise] >= 4) ? this.emotionSurprise = true : this.emotionSurprise = false;
+          (res[Emotion.anger] >= 4) ? this.emotionAnger = true : this.emotionAnger = false;
         })
       )
   };
