@@ -1,10 +1,15 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-spinner',
   templateUrl: './spinner.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./spinner.component.scss']
 })
+export class SpinnerComponent implements OnInit {
 
-export class SpinnerComponent { }
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

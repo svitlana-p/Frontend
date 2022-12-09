@@ -1,52 +1,47 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Emotion } from '../models/emotion-enum';
-import { IEmotions } from '../models/emotions';
-import { IQuestion } from '../models/question';
+import { ResultItem } from '../models/emotions';
+import { IQuestion, IQuizz } from '../models/question';
 import { QuestionnareRes } from '../models/questionnare-res';
+import { QuizzRes } from '../models/quizz-res';
+import { IRecommendation } from '../models/recommendation';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
-  emotionJoy = false;
-  emotionFear = false;
-  emotionSadness = false;
-  emotionDisgust = false;
-  emotionSurprise = false;
-  emotionAnger = false;
-//@ts-ignore
-//  apiURL = environment?.apiURL || ''
+  apiURL = environment?.apiURL || ''
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<IQuestion[]> {
-    return this.http.get<QuestionnareRes>(`https://emotional-help.herokuapp.com/v1/questions`)
-      .pipe(
-        map(res => res.content)
-      )
+  getQuizzes():Observable<IQuizz[]> {
+    return this.http.get<QuizzRes>(`${this.apiURL}/v1/quizzes`)
+    .pipe(
+      map(res=>res.content)
+    )
   }
 
-  postTest(questions: (Partial<IQuestion>[])): Observable<IEmotions> {
-    
-    return this.http.post<IEmotions>(`https://emotional-help.herokuapp.com/v1/results`, questions)
-      .pipe(
-        tap((res: IEmotions) => {
-          (res[Emotion.joy] >= 4) ? this.emotionJoy = true : this.emotionJoy = false;
-          (res[Emotion.fear] >= 4) ? this.emotionFear = true : this.emotionFear = false;
-          (res[Emotion.sadness] >= 4) ? this.emotionSadness = true : this.emotionSadness = false;
-          (res[Emotion.disgust] >= 4) ? this.emotionDisgust = true : this.emotionDisgust = false;
-          (res[Emotion.surprise] >= 4) ? this.emotionSurprise = true : this.emotionSurprise = false;
-          (res[Emotion.anger] >= 4) ? this.emotionAnger = true : this.emotionAnger = false;
-        })
-      )
-  };
+  getQuizz(id:number):Observable<IQuestion[]> {
+    return this.http.get<QuestionnareRes>(`${this.apiURL}/v1/quizzes/${id}`)
+    .pipe(
+      map(res=>res.questions)
+    )
+  }
 
+  processTest(questions: (Partial<IQuestion>[]), id:number): Observable<number> {
+    return this.http.post<number>(`${this.apiURL}/v1/quizzes/${id}`, questions)
 
-  getResult() {
+  }
 
+  getResult(attemptId:number):Observable<ResultItem[]> {
+    return this.http.get<ResultItem[]>(`${this.apiURL}/v1/results/${attemptId}`)
+  }
+
+  getRecommendations(attemptId:number): Observable<IRecommendation[]>{
+    return this.http.get<IRecommendation[]>(`${this.apiURL}/v1/appointments/attempt/${attemptId}`)
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { map, Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { SpinnerService } from 'src/app/core/spinner.service';
 import { TestService } from 'src/app/core/test.service';
 import { IQuestion } from 'src/app/models/question';
 
@@ -11,27 +12,35 @@ import { IQuestion } from 'src/app/models/question';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit, OnDestroy {
-
   sub!: Subscription;
+  postSub!: Subscription;
   isSubmited = false;
+  isVisible = false;
   questions: IQuestion[] = [];
 
   testForm = new FormGroup({
     questions: new FormArray([])
   });
 
-
   constructor(private testService: TestService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    public spinnerService: SpinnerService) { }
 
   get questionsArr(): FormArray {
     return this.testForm.get('questions') as FormArray
   }
+  id!: number;
 
   ngOnInit(): void {
-    this.sub = this.testService.getAll().subscribe(questions => {
-      this.questions = questions;
+    this.spinnerService.open()
+    this.id = this.route.snapshot.params['id'];
+    this.sub = this.testService.getQuizz(this.id).subscribe(res => {
+      console.log(res)
+      this.questions = res;
       this.setFormData();
+      this.isVisible = true;
+      this.spinnerService.close()
     })
   }
 
@@ -56,15 +65,15 @@ export class TestComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log(this.testForm.value.questions)
     this.isSubmited = true;
     if (this.testForm.invalid) return
-    this.testService.postTest(this.testForm.value.questions as IQuestion[]).subscribe()
-    this.router.navigate(['/result'])    
+    this.testService.processTest(this.testForm.value.questions as IQuestion[], this.id).subscribe(atemptId => {
+      this.router.navigate(['/result', atemptId])
+    })
   }
-
 
   ngOnDestroy(): void {
     if (this.sub) this.sub.unsubscribe();
+    if (this.postSub) this.postSub.unsubscribe();
   }
 }
