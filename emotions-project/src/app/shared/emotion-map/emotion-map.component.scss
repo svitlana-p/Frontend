@@ -1,7 +1,7 @@
 @import "../../../styles/mixins.scss";
 
 .emotions-map {
-  @include hexagon-grid--small;
+  @include hexagon-grid;
   margin: 175px auto;
 
   &__item {
@@ -9,7 +9,7 @@
   }
 
   &__hexagon {
-    @include size(130px);
+    @include size(150px);
     @include hexagon;
 
     display: flex;
@@ -70,17 +70,6 @@
 
 @media (min-width:1024px) {
   .emotions-map {
-    @include hexagon-grid;
-
-    &__hexagon {
-      @include size(150px);
-      @include hexagon;
-
-      &--small {
-        @include size(100px);
-      }
-    }
-
     &__sub-categories {
       visibility: visible;
     }
