@@ -1,7 +1,7 @@
 @import "../../../styles/mixins.scss";
 
 .emotions-map {
-  @include hexagon-grid;
+  @include hexagon-grid--small;
   margin: 175px auto;
 
   &__item {
@@ -9,7 +9,7 @@
   }
 
   &__hexagon {
-    @include size(150px);
+    @include size(130px);
     @include hexagon;
 
     display: flex;
@@ -62,12 +62,27 @@
     }
   }
 
-  h3, h4 {
+  h3,
+  h4 {
     text-transform: uppercase;
   }
 }
+
 @media (min-width:1024px) {
-  .emotions-map__sub-categories {
-    visibility: visible;
+  .emotions-map {
+    @include hexagon-grid;
+
+    &__hexagon {
+      @include size(150px);
+      @include hexagon;
+
+      &--small {
+        @include size(100px);
+      }
+    }
+
+    &__sub-categories {
+      visibility: visible;
+    }
   }
 }
