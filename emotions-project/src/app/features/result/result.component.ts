@@ -18,7 +18,7 @@ export class ResultComponent implements OnInit, OnDestroy {
   recSub!: Subscription;
   recommendations: IRecommendation[] = [];
   isVisible = false;
-  link = this.router.routerState.snapshot.url;
+  link ='https://frontend-two-cyan-27.vercel.app'+ this.router.url;
 
   constructor(private testService: TestService,
     private route: ActivatedRoute,
@@ -33,6 +33,7 @@ export class ResultComponent implements OnInit, OnDestroy {
       this.result = res;
       this.isVisible = true;
       this.spinnerService.close();
+      console.log(location.pathname);
     })
   }
 
